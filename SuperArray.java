@@ -3,8 +3,8 @@ public class SuperArray {
   private String[] data;
   private int size; //the current size
 
-  public SuperArray() {
-    data = new String[10];
+  public SuperArray(int initialCapacity) {
+    data = new String[initialCapacity];
     size = 0;
   }
 
