@@ -27,4 +27,12 @@ public class SuperArray {
     data[index] = element;
     return old;
   }
+
+  private void resize() {
+    String[] bigdata = new String[20];
+    for (int i=0; i<data.length; i++) {
+      bigdata[i] = data[i];
+    }
+    data = bigdata;
+  }
 }
