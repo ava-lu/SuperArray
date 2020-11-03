@@ -50,7 +50,7 @@ public class SuperArray {
 
    public String toString() {
      String array = "";
-     if (size == 0 ) array = "[]";
+     if (size == 0) array = "[]";
      for (int i=0; i<data.length; i++) {
        if (i == size - 1) {
          array+=String.valueOf(data[i])+"]";
@@ -67,4 +67,16 @@ public class SuperArray {
     }
     return a;
   }
+
+  public void add(int index, String element) {
+    if (data[index] == null) data[index] = element;
+    else {
+      for (int i=index; i<data.length; i++) {
+        String store = data[index];
+        data[index+1] = store;
+      }
+      data[index] = element;
+    }
+  }
+
 }
