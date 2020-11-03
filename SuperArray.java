@@ -4,6 +4,11 @@ public class SuperArray {
   private int size; //the current size
 
   public SuperArray() {
-    int[] superArray = new int[10];
+    data = new String[10];
+    size = 0;
+  }
+
+  public int size() {
+    return size;
   }
 }
