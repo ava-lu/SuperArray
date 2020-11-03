@@ -17,4 +17,8 @@ public class SuperArray {
     size++;
     return true;
   }
+
+  public String get(int index) {
+    return data[index];
+  }
 }
