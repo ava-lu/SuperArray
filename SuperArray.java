@@ -34,7 +34,7 @@ public class SuperArray {
   }
 
   private void resize() {
-    String[] bigdata = new String[size*2];
+    String[] bigdata = new String[(size+1)*2];
     for (int i=0; i<data.length; i++) {
       bigdata[i] = data[i];
     }
@@ -66,7 +66,7 @@ public class SuperArray {
 
   public boolean contains(String s) {
     boolean a = false;
-    for (int i=0; i<data.length; i++) {
+    for (int i=0; i<size; i++) {
       if (data[i].equals(s)) a = true;
     }
     return a;
