@@ -3,6 +3,10 @@ public class SuperArray {
   private String[] data;
   private int size; //the current size
 
+  public SuperArray() {
+    data = new String[10];
+    size = 0;
+  }
   public SuperArray(int initialCapacity) {
     data = new String[initialCapacity];
     size = 0;
@@ -69,6 +73,7 @@ public class SuperArray {
   }
 
   public void add(int index, String element) {
+    if (size == data.length) resize();
     if (data[index] == null) data[index] = element;
     else {
       for (int i=index; i<data.length; i++) {
