@@ -91,4 +91,16 @@ public class SuperArray {
     return value;
   }
 
+  public int indexOf(String s) {
+    boolean isthere = false;
+    int no = -1;
+    for (int i=0; i<size; i++) {
+        if (isthere == false && data[i].equals(s)) {
+          isthere = true;
+          no = i;
+        }
+      }
+      return no;
+    }
+
 }
