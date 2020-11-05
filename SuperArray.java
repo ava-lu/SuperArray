@@ -53,9 +53,9 @@ public class SuperArray {
   }
 
    public String toString() {
-     String array = "";
+     String array = "[";
      if (size == 0) array = "[]";
-     for (int i=0; i<data.length; i++) {
+     for (int i=0; i<size; i++) {
        if (i == size - 1) {
          array+=String.valueOf(data[i])+"]";
        }
@@ -74,14 +74,17 @@ public class SuperArray {
 
   public void add(int index, String element) {
     if (size == data.length) resize();
-    if (data[index] == null) data[index] = element;
-    else {
-      for (int i=index; i<data.length; i++) {
-        String store = data[index];
-        data[index+1] = store;
-      }
-      data[index] = element;
+    for (int i=size-1; i>=index; i--) {
+      String store = data[i];
+      data[i+1] = store;
     }
+    data[index] = element;
+    size++;
   }
+
+  // public String remove(int index) {
+  //   String value = data[index];
+  //
+  // }
 
 }
