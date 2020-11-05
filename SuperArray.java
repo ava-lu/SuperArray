@@ -103,4 +103,12 @@ public class SuperArray {
       return no;
     }
 
+    public String[] toArray() {
+      String[] arr = new String[size];
+      for (int i=0; i<size; i++) {
+        arr[i] = data[i];
+      }
+      return arr;
+    }
+
 }
