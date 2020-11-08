@@ -112,15 +112,16 @@ public class SuperArray {
     }
 
     public int lastIndexOf(String value) {
-      boolean isThere = false;
-      int no = -1;
-      for (int i=size; i>=0; i--) {
-        if (isThere == false && data[i].equals(value)) {
-          isThere = true;
-          no = i;
+      int index = -1;
+      if (contains(value)) {
+        for (int i=size; i>=0; i--) {
+          if (data[i] != null && data[i].equals(value) ) {
+            index = i;
+            return index;
+          }
         }
       }
-      return no;
+      return index;
     }
 
     public boolean equals(SuperArray other) {
