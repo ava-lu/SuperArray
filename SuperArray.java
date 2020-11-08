@@ -52,7 +52,7 @@ public class SuperArray {
     }
   }
 
-   public String toString() {
+  public String toString() {
      String array = "[";
      if (size == 0) array = "[]";
      for (int i=0; i<size; i++) {
@@ -95,42 +95,43 @@ public class SuperArray {
     boolean isthere = false;
     int no = -1;
     for (int i=0; i<size; i++) {
-        if (isthere == false && data[i].equals(s)) {
-          isthere = true;
-          no = i;
+      if (isthere == false && data[i].equals(s)) {
+        isthere = true;
+        no = i;
+      }
+    }
+    return no;
+  }
+
+  public String[] toArray() {
+    String[] arr = new String[size];
+    for (int i=0; i<size; i++) {
+      arr[i] = data[i];
+    }
+    return arr;
+  }
+
+  public int lastIndexOf(String value) {
+    int index = -1;
+    if (contains(value)) {
+      for (int i=size; i>=0; i--) {
+        if (data[i] != null && data[i].equals(value) ) {
+          index = i;
+          return index;
         }
       }
-      return no;
     }
-
-    public String[] toArray() {
-      String[] arr = new String[size];
-      for (int i=0; i<size; i++) {
-        arr[i] = data[i];
-      }
-      return arr;
-    }
-
-    public int lastIndexOf(String value) {
-      int index = -1;
-      if (contains(value)) {
-        for (int i=size; i>=0; i--) {
-          if (data[i] != null && data[i].equals(value) ) {
-            index = i;
-            return index;
-          }
-        }
-      }
       return index;
-    }
+  }
 
-    public boolean equals(SuperArray other) {
-      boolean answer = false;
+  public boolean equals(SuperArray other) {
+    int count = 0;
+    if (size == other.size()) {
       for (int i=0; i<size; i++) {
-        if (data[i].equals(other.get(i))) answer = true;
-        else answer = false;
+        if (data[i].equals(other.get(i))) count++;
       }
-      return answer;
     }
+    return (count == size);
+  }
 
 }
