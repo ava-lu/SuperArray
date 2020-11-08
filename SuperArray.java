@@ -111,4 +111,16 @@ public class SuperArray {
       return arr;
     }
 
+    public int lastIndexOf(String value) {
+      boolean isThere = false;
+      int no = -1;
+      for (int i=size; i>=0; i--) {
+        if (isThere == false && data[i].equals(value)) {
+          isThere = true;
+          no = i;
+        }
+      }
+      return no;
+    }
+
 }
