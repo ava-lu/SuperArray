@@ -113,15 +113,13 @@ public class SuperArray {
 
   public int lastIndexOf(String value) {
     int index = -1;
-    if (contains(value)) {
-      for (int i=size; i>=0; i--) {
-        if (data[i] != null && data[i].equals(value) ) {
-          index = i;
-          return index;
-        }
+    for (int i=size-1; i>=0; i--) {
+      if (data[i].equals(value) ) {
+        index = i;
+        return index;
       }
     }
-      return index;
+    return index;
   }
 
   public boolean equals(SuperArray other) {
