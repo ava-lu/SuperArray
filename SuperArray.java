@@ -85,6 +85,10 @@ public class SuperArray {
   }
 
   public void add(int index, String element) {
+    if (index<0 || index>=size()) {
+      throw new IndexOutOfBoundsException("index "+index+
+      " is not within range of SuperArray.");
+    }
     if (size == data.length) resize();
     for (int i=size-1; i>=index; i--) {
       String store = data[i];
