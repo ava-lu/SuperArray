@@ -1,3 +1,4 @@
+import java.util.Arrays;
 public class ErrorTester {
   public static void main(String[] args) {
     //catch exceptions
@@ -16,13 +17,13 @@ public class ErrorTester {
     try {
     //  System.out.println(test2.get(10));
     //  System.out.println(test2.set(-5, "yay"));
-    //  test2.add(10319310, "yum");
-      test2.remove(7);
+      test2.add(3, "yum");
+    //  test2.remove(7);
     }
     catch (IndexOutOfBoundsException e){
       System.out.println("NOT IN BOUNDS!");
     }
-
+    System.out.println(test2.toString());
 
   }
 }
